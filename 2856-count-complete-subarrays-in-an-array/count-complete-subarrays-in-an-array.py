@@ -12,6 +12,4 @@ class Solution(object):
                 s.add(nums[j])
                 if (len(s) == c):
                     count += 1
-                # elif (len(s)>c):
-                #     break
         return count
