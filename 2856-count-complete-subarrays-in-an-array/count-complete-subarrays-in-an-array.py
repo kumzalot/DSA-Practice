@@ -1,15 +1,12 @@
 class Solution(object):
     def countCompleteSubarrays(self, nums):
-        n = len(nums)
-        c = len(set(nums))
-        
         count = 0
-
-        for i in range(n):
+        distinct = len(set(nums))
+        
+        for i in range(len(nums)):
             s = set()
-
-            for j in range(i,n):
+            for j in range(i, len(nums)):
                 s.add(nums[j])
-                if (len(s) == c):
+                if (len(s)==distinct):
                     count += 1
         return count
