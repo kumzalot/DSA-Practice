@@ -9,7 +9,7 @@ class Solution:
 
         post = 1
         for i in range(n-1, -1, -1):
-            res[i] = res[i] * post
+            res[i] *= post
             post *= nums[i] 
         
 
