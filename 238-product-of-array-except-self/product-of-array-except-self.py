@@ -4,7 +4,6 @@ class Solution:
         n = len(nums)
         res = [1] * n
         
-        pre = 1
         for i in range(1, n):
             res[i] = nums[i-1] * res[i-1]
 
