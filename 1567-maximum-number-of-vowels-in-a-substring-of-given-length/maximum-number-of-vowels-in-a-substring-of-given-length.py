@@ -1,6 +1,6 @@
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
-        vowels = {'a', 'e', 'i', 'o', 'u'}
+        vowels = {'a', 'e', 'i', 'o', 'u'} # O(1) lookup 
         count, max_count = 0, 0
 
         # inital iteration
