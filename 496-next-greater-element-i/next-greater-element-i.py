@@ -10,7 +10,7 @@ class Solution:
             while stk and nums2[stk[-1]] <= nums2[i]:
                 stk.pop()
             
-            if stk and nums2[i] in nums1:
+            if stk and nums2[i] in index_map:
                 res[index_map[nums2[i]]] = nums2[stk[-1]]
 
             stk.append(i)
