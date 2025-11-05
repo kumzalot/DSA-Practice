@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
-        # 1. find midpoint
+        # 1. find midpoint and split into two seperate LLs
         slow, fast = head, head.next
         while fast and fast.next:
             slow = slow.next
@@ -13,18 +13,17 @@ class Solution:
         second = slow.next
         slow.next = None
 
-        # 2. reverse second LL
+        # 2. reverse the second LL
         prev = None
         while second:
             nxt = second.next
             second.next = prev
             prev = second
             second = nxt
-
-        # 3. reordering the LL
+        
+        # 3. reorder the 2 LLs
         t1, t2 = first, second = head, prev
         while t2:
             t1, t2 = first.next, second.next
-            first.next = second
-            second.next = t1
+            first.next, second.next = second, t1
             first, second = t1, t2
